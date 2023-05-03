@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import * as Location from "expo-location";
 import { Alert } from "react-native";
+import colors from "../utils/colors";
 
 export default function HomeScreen({ navigation }) {
   const [location, setLocation] = useState({});
@@ -78,11 +79,16 @@ export default function HomeScreen({ navigation }) {
         <>
           <TextInput
             style={styles.input}
+            placeholder="Type Emergency Message Here..."
             value={text}
-            numberOfLines={4}
+            numberOfLines={6}
             onChangeText={(input) => setText(input)}
           />
-          <Button onPress={handleSubmit} title="Submit" />
+          <Button
+            title="Submit"
+            onPress={handleSubmit}
+            color={colors.primary}
+          />
         </>
       )}
     </View>
@@ -92,12 +98,12 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: colors.white,
     alignItems: "center",
     justifyContent: "center",
   },
   input: {
-    width: "80%",
+    width: "85%",
     margin: 12,
     borderWidth: 1,
     padding: 10,

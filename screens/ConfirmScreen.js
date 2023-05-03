@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import colors from "../utils/colors";
 
 export default function ConfirmScreen({ route }) {
   const { msg } = route.params;
@@ -14,7 +15,7 @@ export default function ConfirmScreen({ route }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: colors.white,
     alignItems: "center",
     justifyContent: "center",
   },

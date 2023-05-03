@@ -5,14 +5,16 @@ import {
   VideoStackNavigator,
 } from "./StackNavigator";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import colors from "../utils/colors";
 
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigator() {
   const defaultNavOptions = {
     headerShown: false,
-    tabBarActiveTintColor: "blue",
-    tabBarInactiveTintColor: "gray",
+    tabBarActiveTintColor: colors.black,
+    tabBarInactiveTintColor: colors.gray,
+    tabBarActiveBackgroundColor: colors.primary,
   };
 
   return (

@@ -4,13 +4,14 @@ import HomeScreen from "../screens/HomeScreen";
 import ConfirmScreen from "../screens/ConfirmScreen";
 import VideoScreen from "../screens/VideoScreen";
 import AlertScreen from "../screens/AlertScreen";
+import colors from "../utils/colors";
 
 const Stack = createStackNavigator();
 const defaultNavOptions = {
   headerStyle: {
-    backgroundColor: Platform.OS === "android" ? "blue" : "",
+    backgroundColor: Platform.OS === "android" ? colors.primary : "",
   },
-  headerTintColor: Platform.OS === "android" ? "white" : "blue",
+  headerTintColor: Platform.OS === "android" ? colors.black : colors.primary,
 };
 
 function HomeStackNavigator() {
