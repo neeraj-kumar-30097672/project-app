@@ -1,4 +1,4 @@
-export default data = [
+const data = [
   { vid: "BLEPakj1YTY" },
   { vid: "SeOaGMsIsjo" },
   { vid: "43M5mZuzHF8" },
@@ -7,3 +7,5 @@ export default data = [
   { vid: "vg411YzKlZQ" },
   { vid: "xxZ4lnkrqTw" },
 ];
+
+export default data;
