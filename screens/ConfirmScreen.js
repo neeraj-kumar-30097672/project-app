@@ -1,13 +1,22 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import colors from "../utils/colors";
+import SuccessCard from "../components/SuccessCard";
+import ErrorCard from "../components/ErrorCard";
 
 export default function ConfirmScreen({ route }) {
-  const { msg } = route.params;
+  const { isRelated } = route.params;
+  const message = isRelated
+    ? "Message received, Help is on the way"
+    : "We could not process your message";
 
   return (
     <View style={styles.container}>
-      <Text>{msg}</Text>
+      {isRelated ? (
+        <SuccessCard successMsg={message} />
+      ) : (
+        <ErrorCard errorMsg={message} />
+      )}
     </View>
   );
 }

@@ -34,7 +34,7 @@ function VideoStackNavigator() {
 function AlertStackNavigator() {
   return (
     <Stack.Navigator screenOptions={defaultNavOptions}>
-      <Stack.Screen name="Messages" component={AlertScreen} />
+      <Stack.Screen name="Weather Alerts" component={AlertScreen} />
     </Stack.Navigator>
   );
 }
