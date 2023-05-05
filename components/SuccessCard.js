@@ -3,7 +3,7 @@ import { View, StyleSheet, Text } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../utils/colors";
 
-export default function SuccessCard({ successMsg }) {
+export default function SuccessCard({ successMsg, requestId }) {
   return (
     <View style={styles.card}>
       <MaterialCommunityIcons
@@ -11,6 +11,7 @@ export default function SuccessCard({ successMsg }) {
         size={250}
         color={colors.primary}
       />
+      <Text>Request Id: {requestId}</Text>
       <Text style={styles.text}>{successMsg}</Text>
     </View>
   );
