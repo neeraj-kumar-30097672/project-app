@@ -35,33 +35,37 @@ export default function HomeScreen({ navigation }) {
   };
 
   const handleSubmit = () => {
-    if (!location) {
-      getLocation();
-    }
-
     setLoading(true);
-    const params = new URLSearchParams({
-      msg: text,
-      lat: location.latitude,
-      long: location.longitude,
-    });
+    if (text.length === 0) {
+      setErrorMsg("Please enter your request to continue!!");
+    } else {
+      if (!location) {
+        getLocation();
+      }
 
-    const url = `http://192.168.43.33:3000/api?${params.toString()}`;
-
-    fetch(url, {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        navigation.navigate("Status", data);
-      })
-      .catch((error) => {
-        setErrorMsg(error.message);
+      const params = new URLSearchParams({
+        msg: text,
+        lat: location.latitude,
+        long: location.longitude,
       });
+
+      const url = `http://192.168.43.33:3000/api?${params.toString()}`;
+
+      fetch(url, {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          navigation.navigate("Status", data);
+        })
+        .catch((error) => {
+          setErrorMsg(error.message);
+        });
+    }
     setText("");
     setLoading(false);
   };
@@ -82,7 +86,7 @@ export default function HomeScreen({ navigation }) {
             style={styles.input}
             placeholder="Type Emergency Message Here..."
             value={text}
-            numberOfLines={6}
+            numberOfLines={10}
             onChangeText={(input) => setText(input)}
           />
           <TouchableOpacity style={styles.button} onPress={handleSubmit}>
@@ -112,7 +116,9 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: colors.primary,
     borderRadius: 10,
-    padding: 10,
+    padding: 15,
+    textAlignVertical: "top",
+    fontSize: 14,
   },
   button: {
     flexDirection: "row",
@@ -123,6 +129,7 @@ const styles = StyleSheet.create({
     padding: 10,
     width: "85%",
     borderRadius: 10,
+    marginTop: 20,
   },
   btnText: {
     fontWeight: "600",

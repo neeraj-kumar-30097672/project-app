@@ -18,7 +18,7 @@ export default function ConfirmScreen({ route }) {
 
   return (
     <View style={styles.container}>
-      {isRelated ? (
+      {!isRelated ? (
         <View>
           <SuccessCard successMsg={message} requestId={id} />
           <TouchableOpacity
@@ -58,12 +58,13 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary,
     height: 60,
     justifyContent: "center",
-    marginBottom: 100,
+    marginBottom: 80,
+    borderRadius: 10,
   },
   callText: {
-    color: colors.black,
-    fontSize: 16,
-    fontWeight: "600",
+    color: colors.white,
+    fontSize: 20,
+    fontWeight: "700",
     textAlign: "center",
   },
 });

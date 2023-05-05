@@ -29,11 +29,9 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
   },
   button: {
-    flexDirection: "row",
     backgroundColor: colors.primary,
     paddingHorizontal: 20,
     paddingVertical: 10,
-    width: "50%",
     borderRadius: 10,
     marginVertical: 40,
   },
