@@ -76,7 +76,7 @@ export default function HomeScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      {loading && <ActivityIndicator size="large" color="#0000ff" />}
+      {loading && <ActivityIndicator size="large" color={colors.primary} />}
       {!loading && errorMsg.length > 0 && (
         <ErrorCard errorMsg={errorMsg} handlePress={getLocation} />
       )}
@@ -85,7 +85,7 @@ export default function HomeScreen({ navigation }) {
           <Text style={styles.label}>Enter your message here to get help:</Text>
           <TextInput
             style={styles.input}
-            placeholder="Type Emergency Message Here..."
+            placeholder="Type Here...."
             value={text}
             numberOfLines={10}
             onChangeText={(input) => setText(input)}

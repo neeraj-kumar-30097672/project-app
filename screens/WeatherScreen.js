@@ -51,7 +51,7 @@ export default function WeatherScreen() {
 
   return (
     <View style={styles.container}>
-      {loading && <ActivityIndicator size="large" color="#0000ff" />}
+      {loading && <ActivityIndicator size="large" color={colors.primary} />}
       {!loading && errorMsg.length > 0 && (
         <ErrorCard errorMsg={errorMsg} handlePress={getWeather} />
       )}
