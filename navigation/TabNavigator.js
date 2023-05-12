@@ -1,10 +1,10 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {
-  AlertStackNavigator,
+  WeatherStackNavigator,
   HomeStackNavigator,
   VideoStackNavigator,
 } from "./StackNavigator";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons, Ionicons } from "@expo/vector-icons";
 import colors from "../utils/colors";
 
 const Tab = createBottomTabNavigator();
@@ -20,7 +20,7 @@ export default function TabNavigator() {
   return (
     <Tab.Navigator screenOptions={defaultNavOptions}>
       <Tab.Screen
-        name="Requst Help"
+        name="Request Help"
         component={HomeStackNavigator}
         options={{
           tabBarIcon: ({ color }) => (
@@ -42,15 +42,11 @@ export default function TabNavigator() {
         }}
       />
       <Tab.Screen
-        name="Alerts"
-        component={AlertStackNavigator}
+        name="Weather"
+        component={WeatherStackNavigator}
         options={{
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons
-              name="comment-alert"
-              size={24}
-              color={color}
-            />
+            <Ionicons name="md-partly-sunny-sharp" size={24} color={color} />
           ),
         }}
       />

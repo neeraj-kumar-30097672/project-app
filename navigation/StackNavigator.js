@@ -3,7 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../screens/HomeScreen";
 import ConfirmScreen from "../screens/ConfirmScreen";
 import VideoScreen from "../screens/VideoScreen";
-import AlertScreen from "../screens/AlertScreen";
+import WeatherScreen from "../screens/WeatherScreen";
 import colors from "../utils/colors";
 
 const Stack = createStackNavigator();
@@ -31,12 +31,12 @@ function VideoStackNavigator() {
   );
 }
 
-function AlertStackNavigator() {
+function WeatherStackNavigator() {
   return (
     <Stack.Navigator screenOptions={defaultNavOptions}>
-      <Stack.Screen name="Weather Alerts" component={AlertScreen} />
+      <Stack.Screen name="Weather Alerts" component={WeatherScreen} />
     </Stack.Navigator>
   );
 }
 
-export { HomeStackNavigator, VideoStackNavigator, AlertStackNavigator };
+export { HomeStackNavigator, VideoStackNavigator, WeatherStackNavigator };

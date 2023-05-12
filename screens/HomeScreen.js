@@ -82,6 +82,7 @@ export default function HomeScreen({ navigation }) {
       )}
       {!loading && errorMsg.length === 0 && (
         <>
+          <Text style={styles.label}>Enter your message here to get help:</Text>
           <TextInput
             style={styles.input}
             placeholder="Type Emergency Message Here..."
@@ -109,6 +110,12 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     alignItems: "center",
     justifyContent: "center",
+  },
+  label: {
+    fontWeight: "bold",
+    fontSize: 18,
+    marginRight: 30,
+    marginBottom: 10,
   },
   input: {
     width: "85%",

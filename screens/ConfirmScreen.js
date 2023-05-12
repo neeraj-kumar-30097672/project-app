@@ -18,7 +18,7 @@ export default function ConfirmScreen({ route }) {
 
   return (
     <View style={styles.container}>
-      {!isRelated ? (
+      {isRelated ? (
         <View>
           <SuccessCard successMsg={message} requestId={id} />
           <TouchableOpacity
